@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2.1: Bootstrap Directory Structure</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="p-4 bg-dark text-white rounded mb-4">
+            <h2>Exploring Bootstrap Directory Structure</h2>
+            <p>Understanding what is inside the downloaded package.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary">CSS Folder</h4>
+                        <p>Contains style files. <code>bootstrap.css</code> contains the main styles. <code>bootstrap.min.css</code> is the minified (compressed) version which loads faster in production. <code>.map</code> files are used for debugging.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title text-success">JS Folder</h4>
+                        <p>Contains JavaScript files for interactive components like dropdowns, modals, and tooltips. <code>bootstrap.bundle.js</code> includes Popper.js, which is required for positioning dropdowns and popovers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4 mb-5">
+            <div class="card-body">
+                <h3>What I learned from this exercise:</h3>
+                <p>I explored the contents of the compiled Bootstrap package and identified the CSS and JS directories. I learned the difference between regular and minified (.min) files, and why bundles are preferred (since they package dependencies like Popper.js).</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
