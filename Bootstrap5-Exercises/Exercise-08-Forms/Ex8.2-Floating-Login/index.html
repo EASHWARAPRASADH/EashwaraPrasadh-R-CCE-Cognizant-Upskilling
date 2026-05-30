@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8.2: Floating Labels Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Floating Label Login Form</h2>
+
+        <form class="p-4 border rounded bg-white" style="max-width: 400px; margin: 0 auto;">
+            <!-- form-floating creates overlay label placeholders -->
+            <div class="form-floating mb-3">
+                <!-- Input must come first, placeholder is required for styling -->
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                <label for="floatingInput">Email address</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <button type="submit" class="w-100 btn btn-lg btn-success">Sign In</button>
+        </form>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h3>What I learned from this exercise:</h3>
+                <p>I learned how to use <code>form-floating</code> classes to make labels overlay inputs and slide upwards upon user selection, matching modern interactive portal standards.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
