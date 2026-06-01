@@ -1,0 +1,5 @@
+// Custom variables must be declared BEFORE importing bootstrap SCSS
+$primary: #e066ff; // Custom violet primary color
+$border-radius: 1.5rem; // Rounded corners styling
+
+@import "../node_modules/bootstrap/scss/bootstrap";

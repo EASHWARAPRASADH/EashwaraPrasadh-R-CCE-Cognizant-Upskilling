@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 19.2: Custom Theme Sass Recompilation</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Notice the primary color is violet and corners are extra round due to custom variables -->
+        <div class="p-5 bg-primary text-white text-center rounded">
+            <h1>Customized Theme Colors</h1>
+            <p>This page features a custom violet color and rounded borders configured using Sass variables.</p>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h3>What I learned from this exercise:</h3>
+                <p>I learned how to customize Bootstrap's look and feel by overriding variables (like <code>$primary</code> and <code>$border-radius</code>) in my Sass files *before* importing the main Bootstrap SCSS stylesheet, and then recompiling it into a custom theme build.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
