@@ -1,0 +1,316 @@
+/* ==========================================
+   CSS FILE FOR LOCAL COMMUNITY EVENT PORTAL
+   Author: Junior Web Developer / Student
+   ========================================== */
+
+/* 1. UNIVERSAL SELECTOR (*) - Resets margins, padding, and box sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. ELEMENT SELECTORS & TYPOGRAPHY */
+body {
+    /* typography: font-family, font-size, line-height */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    
+    /* HEX Color */
+    color: #333333;
+    
+    /* Background Image with Fallback Color */
+    background-color: #f7f9fc;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+}
+
+/* Group Selector - Styling all headings together */
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: 0.5px; /* typography: letter-spacing */
+    text-transform: capitalize; /* typography: text-transform */
+}
+
+h2 {
+    font-size: 2.2rem; /* typography: font-size */
+    text-align: center; /* typography: text-align */
+    margin-bottom: 20px;
+    color: #1a365d;
+}
+
+p {
+    font-style: normal; /* typography: font-style */
+}
+
+/* 3. LAYOUT & RESPONSIVE UNITS (%, vw, vh) */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    min-height: 80vh; /* Responsive Unit: vh */
+}
+
+section {
+    background-color: #ffffff;
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* RGBA Color */
+}
+
+/* ID Selector for sections requiring unique layout */
+#registration {
+    border: 2px solid #e2e8f0; /* Box Model: border */
+}
+
+/* Class Selector - Highlights important text */
+.highlight {
+    background-color: rgba(254, 240, 138, 0.8); /* RGBA Color */
+    font-weight: bold; /* typography: font-weight */
+    padding: 4px 8px; /* Box Model: padding */
+    border-radius: 4px;
+}
+
+/* 4. NAVIGATION BAR */
+nav {
+    background-color: #1a365d;
+    padding: 15px 0;
+}
+
+/* List Styling */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none; /* list-style-type */
+    list-style-position: inside; /* list-style-position */
+}
+
+nav ul li {
+    margin: 0 20px; /* Box Model: margin */
+}
+
+/* Link Pseudo-classes (:link, :visited, :hover, :active) */
+nav ul li a:link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:visited {
+    color: #94a3b8;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+nav ul li a:active {
+    color: #38bdf8;
+}
+
+/* 5. WELCOME BANNER (Linear Gradient) */
+#welcomeBanner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); /* Linear Gradient */
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+#welcomeBanner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* 6. TABLE STYLING */
+.event-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%; /* Responsive Unit: % */
+    border-collapse: collapse; /* border-collapse */
+    margin: 20px 0;
+    text-align: left; /* text-align */
+}
+
+table th, table td {
+    padding: 12px 15px; /* padding */
+    border: 1px solid #e2e8f0; /* border */
+}
+
+table th {
+    background-color: #1e3a8a; /* background-color */
+    color: white;
+    font-weight: bold;
+}
+
+/* Zebra Striping */
+table tr:nth-child(even) {
+    background-color: #f8fafc; /* background-color */
+}
+
+/* 7. DYNAMIC EVENT CARDS GRID */
+#eventsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.event-card {
+    flex: 1 1 300px;
+    max-width: 380px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Form inputs styling with outline control */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Demonstrate Outline property */
+input:focus, select:focus, textarea:focus {
+    outline: 3px solid #60a5fa; /* Box Model: outline */
+    outline-offset: 1px;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* General button styling */
+.btn {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* 8. NEWSPAPER STYLE SECTION */
+.newspaper-section {
+    column-count: 3; /* newspaper: column-count */
+    column-gap: 40px; /* newspaper: column-gap */
+    column-rule: 2px dashed #cbd5e1; /* newspaper: column-rule */
+    text-align: justify;
+}
+
+/* 9. VISIBILITY VS DISPLAY EXAMPLE STYLING */
+.visibility-hidden-demo {
+    visibility: hidden; /* Takes up space, but not visible */
+    background-color: #fee2e2;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.display-none-demo {
+    display: none; /* Takes up NO space and not visible */
+    background-color: #dcfce7;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.demo-box {
+    border: 1px solid #94a3b8;
+    padding: 15px;
+    background-color: #f1f5f9;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* 10. FOOTER STYLING */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* 11. RESPONSIVE WEB DESIGN & MEDIA QUERIES */
+/* Media query for screens below 768px width */
+@media screen and (max-width: 768px) {
+    /* Stack navigation items vertically */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 8px 0;
+    }
+    
+    /* Decrease welcome banner font size */
+    #welcomeBanner h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Convert newspaper layout to single column on small screens */
+    .newspaper-section {
+        column-count: 1;
+        column-gap: 0;
+        column-rule: none;
+    }
+    
+    /* Stack cards better on mobile viewports */
+    .event-card {
+        max-width: 100%;
+        width: 100%; /* Responsive Unit: % */
+    }
+    
+    main {
+        max-width: 95vw; /* Responsive Unit: vw */
+    }
+}

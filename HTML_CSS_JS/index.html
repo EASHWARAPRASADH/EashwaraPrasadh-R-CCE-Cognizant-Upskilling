@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    
+    <!-- CSS3 Requirement: External CSS Link -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- HTML5 Requirement 7: Apply blue background to welcome banner using Internal CSS -->
+    <!-- CSS3 Requirement: Internal CSS demonstration -->
+    <style>
+        #welcomeBanner {
+            background-color: #1e40af; /* Deep blue background */
+            padding: 30px;
+            color: #ffffff;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        /* Internal CSS helper style for simple demo visibility toggles */
+        .demo-control-buttons {
+            margin: 10px 0;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+    
+    <!-- Load jQuery CDN for the JQuery Requirements -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- JavaScript Requirement 1: Link main.js to index.html -->
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <!-- HTML5 Requirement 2: Navigation Section Comment -->
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <ul>
+            <!-- HTML5 Requirement 3 & 4: Navigation links for Home, Events, Contact with matching section IDs -->
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- HTML5 Requirement 5: External help page link using target="_blank" -->
+            <li><a href="help.html" target="_blank">Help Center</a></li>
+        </ul>
+    </nav>
+
+    <!-- HTML5 Requirement 2: Main Section Comment -->
+    <!-- MAIN CONTENT SECTION -->
+    <main>
+        
+        <!-- HTML5 Requirement 10: Section for Home -->
+        <section id="home">
+            <!-- HTML5 Requirement 6: Welcome banner using div with id="welcomeBanner" -->
+            <div id="welcomeBanner">
+                <h1>Local Community Event Portal</h1>
+                <!-- HTML5 Requirement 8: Use a span element with inline styling -->
+                <!-- CSS3 Requirement: Inline CSS demonstration -->
+                <p>Welcome! Connecting neighbors and sharing local experiences. <span style="color: #60a5fa; font-style: italic; font-weight: bold;">Happening right now in your neighborhood!</span></p>
+            </div>
+            
+            <div class="intro-text">
+                <h3>Welcome to Our Neighborhood Hub</h3>
+                <p>This portal is designed to keep our community connected. We list local workshops, neighborhood cleanups, block parties, and town hall meetings. Explore the events below, filter by your favorite categories, and register to secure your spot!</p>
+                <!-- HTML5 Requirement 9: Class named "highlight" -->
+                <p class="highlight">Note: Registrations are free but seats are limited. Make sure to sign up early!</p>
+            </div>
+        </section>
+
+        <!-- HTML5 Requirement 10: Section for Events -->
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            
+            <!-- Category Filtering Control -->
+            <div class="filters" style="margin-bottom: 20px; text-align: center;">
+                <label for="categoryFilter" style="font-weight: bold;">Filter by Category: </label>
+                <!-- JavaScript Requirement 21: Category filtering using onchange -->
+                <select id="categoryFilter" style="width: auto; display: inline-block;">
+                    <option value="All">All Categories</option>
+                    <option value="Education">Education</option>
+                    <option value="Social">Social</option>
+                    <option value="Volunteer">Volunteer</option>
+                    <option value="Art">Art</option>
+                </select>
+                
+                <label for="searchInput" style="font-weight: bold; margin-left: 20px;">Search Events: </label>
+                <!-- JavaScript Requirement 22: Search functionality using keydown -->
+                <input type="text" id="searchInput" placeholder="Type event name..." style="width: 200px; display: inline-block; margin-top: 0;">
+            </div>
+
+            <!-- Container where event cards are generated dynamically -->
+            <div id="eventsContainer">
+                <!-- Dynamically generated event cards will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- HTML5 Requirement 10: Section for News (Newspaper style layout) -->
+        <section id="news">
+            <h2>Community Newsletter & Updates</h2>
+            <!-- CSS3 Requirement 13: Newspaper-style section with column count, gap, and rule -->
+            <div class="newspaper-section">
+                <h4>Renovation Project Approved</h4>
+                <p>The municipal council has officially approved the development plan for the new Central Green Park. The construction is scheduled to start next month and will feature modern walking paths, safe playground areas, and a dedicated community gardening space.</p>
+                
+                <h4>Annual Food Drive Success</h4>
+                <p>Thanks to all our generous neighbors, this year's Annual Charity Food Drive broke all previous records. We collected over 1,500 pounds of non-perishable food products, which have been successfully distributed to local shelters and food pantries.</p>
+                
+                <h4>Volunteers Wanted for Summer Fest</h4>
+                <p>Planning for the annual Summer Festival is underway. The event committee is looking for energetic volunteers to help with stage setups, game stall coordination, and guest welcoming services. If you would like to help, please sign up through our registration form.</p>
+            </div>
+        </section>
+
+        <!-- HTML5 Requirement 10: Section for Registration -->
+        <section id="registration">
+            <h2>Event Registration Form</h2>
+            <p>Select your event from the list below and enter your details to sign up.</p>
+            
+            <!-- JavaScript Requirement 26: Create a registration form -->
+            <form id="regForm" novalidate>
+                <div>
+                    <label for="regName">Your Full Name:</label>
+                    <input type="text" id="regName" name="fullName" placeholder="John Doe">
+                    <span id="nameError" class="error-message"></span>
+                </div>
+                
+                <div>
+                    <label for="regEmail">Your Email Address:</label>
+                    <input type="email" id="regEmail" name="emailAddress" placeholder="john@example.com">
+                    <span id="emailError" class="error-message"></span>
+                </div>
+                
+                <div>
+                    <label for="regEvent">Select Event to Join:</label>
+                    <select id="regEvent" name="selectedEvent">
+                        <!-- Options will be dynamically populated from the events list in JS -->
+                        <option value="">-- Choose an Event --</option>
+                    </select>
+                    <span id="eventError" class="error-message"></span>
+                </div>
+                
+                <!-- Registration Counter Closure Display -->
+                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-bottom: 15px;" id="counterDisplay">
+                    Total successful registrations registered locally: 0
+                </p>
+                
+                <button type="submit" class="btn">Submit Registration</button>
+            </form>
+            
+            <div id="formStatus" style="margin-top: 15px; font-weight: bold; text-align: center;"></div>
+        </section>
+
+        <!-- HTML5 Requirement 10: Section for Contact -->
+        <section id="contact">
+            <h2>Contact & Venue Schedule</h2>
+            <p>Need to reach the organizing team? Find our weekly hours and details below, or send us a message.</p>
+            
+            <!-- HTML5 Requirement 11: Create a simple event table -->
+            <!-- CSS3 Requirement 9 & 10: Table styling & Zebra striping -->
+            <div class="event-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Venue Location</th>
+                            <th>Open Hours</th>
+                            <th>Main Contact Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday - Wednesday</td>
+                            <td>Central Community Center</td>
+                            <td>09:00 AM - 05:00 PM</td>
+                            <td>info@communityportal.org</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday - Friday</td>
+                            <td>Central Community Center</td>
+                            <td>09:00 AM - 07:00 PM</td>
+                            <td>support@communityportal.org</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>Town Library Annex</td>
+                            <td>10:00 AM - 04:00 PM</td>
+                            <td>events@communityportal.org</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Closed</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- CSS3 Requirement 12: Include examples showing visibility: hidden vs. display: none -->
+            <div class="demo-box">
+                <h4>CSS Display & Visibility Demo (For Layout Concept Testing)</h4>
+                <div class="demo-control-buttons">
+                    <button type="button" class="btn" id="btnToggleVis">Toggle Visibility Hidden box</button>
+                    <button type="button" class="btn" id="btnToggleDisp">Toggle Display None box</button>
+                </div>
+                <!-- Box with visibility: hidden -->
+                <div id="visBox" class="visibility-hidden-demo">
+                    This block has <code>visibility: hidden</code>. It takes up layout space even when hidden.
+                </div>
+                <!-- Box with display: none -->
+                <div id="dispBox" class="display-none-demo">
+                    This block has <code>display: none</code>. It does not take up any space when hidden.
+                </div>
+                <p style="font-size: 0.9rem; color: #475569;">Note: Click the test buttons above to see how they impact this text position.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- HTML5 Requirement 2: Footer Section Comment -->
+    <!-- FOOTER SECTION -->
+    <footer>
+        <p>&copy; 2026 Local Community Event Portal. All rights reserved.</p>
+        <p>Simple junior assignment web application demonstration.</p>
+    </footer>
+
+</body>
+</html>
